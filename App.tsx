@@ -12,7 +12,7 @@ export default function App() {
       }}
     >
       <Text style={{ color: "#fdfcfe", fontSize: 24, fontWeight: "bold" }}>
-        Bem-vindo ao New Meca
+        Bem-vindo ao New Meca!
       </Text>
     </View>
   );
