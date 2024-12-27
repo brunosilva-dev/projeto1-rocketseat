@@ -4,19 +4,19 @@ import { styles } from "./styles";
 import { Participant } from "../../components/Participant";
 
 function handleParticipantAdd() {
-  console.log("Clicou no botão de adicionar!")
+  console.log("Clicou no botão de adicionar!");
+}
+
+function handleParticipantRemove(name: string) {
+  console.log(`Clicou para remover o usuário ${name}!`);
 }
 
 export function Home() {
   return (
     <View style={styles.container}>
-      <Text style={styles.eventName}>
-        Nome do evento
-      </Text>
+      <Text style={styles.eventName}>Nome do evento</Text>
 
-      <Text style={styles.eventDate}>
-        Sexta, 4 de Novembro de 2022.
-      </Text>
+      <Text style={styles.eventDate}>Sexta, 4 de Novembro de 2022.</Text>
 
       <View style={styles.form}>
         <TextInput
@@ -30,9 +30,10 @@ export function Home() {
         </TouchableOpacity>
       </View>
 
-      <Participant name="Bruno" />
-      <Participant name="Jéssica" />
-      <Participant name="João Felipe" />
+      <Participant
+        name="Bruno"
+        onRemove={() => handleParticipantRemove("Bruno")}
+      />
     </View>
-  )
+  );
 }
