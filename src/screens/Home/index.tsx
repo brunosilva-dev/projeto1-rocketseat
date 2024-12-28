@@ -9,33 +9,20 @@ import {
 
 import { styles } from "./styles";
 import { Participant } from "../../components/Participant";
+import { useState } from "react";
 
 export function Home() {
-  const participants = [
-    "João Felipe",
-    "Jéssica",
-    "Camila",
-    "leonardo",
-    "Cristina",
-    "Maria Eduarda",
-    "João Pedro",
-    "Kaire",
-    "Tiago",
-    "Servita",
-    "Bolt",
-    "Marcos",
-    "Inês",
-    "Katia",
-  ];
+  const [participants, setParticipants] = useState(["João Felipe"]);
 
   function handleParticipantAdd() {
-    if (participants.includes("João Felipe")) {
+    if (participants.includes("Jéssica Sanches")) {
       return Alert.alert(
         "Participante existe",
         "Já existe um participante na lista com esse nome!"
       );
     }
-    console.log("Clicou no botão de adicionar!");
+
+    setParticipants((prevState) => [...prevState, "Bruno Silva"]);
   }
 
   function handleParticipantRemove(name: string) {
